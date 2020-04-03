@@ -1,0 +1,24 @@
+{
+    "name": "will-do",
+    "version": "1.0.0",
+    "description": "To-Do list similar web app",
+    "main": "gulpfile.js",
+    "scripts": {
+        "watchSass": "sass --watch src/styles/app.scss src/styles/app.css"
+    },
+    "author": "Stan",
+    "license": "ISC",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.1",
+        "@mdi/font": "^5.0.45",
+        "animate.css": "^3.7.2",
+        "aos": "^2.3.4",
+        "bootstrap": "^4.4.1",
+        "bootstrap-sass": "^3.4.1",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-uglify": "^3.0.2",
+        "jquery": "^3.4.1"
+    }
+}

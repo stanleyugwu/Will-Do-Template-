@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home | Will Do</title>
+    <meta name="description" content="A To-Do-Like Front-End Web App to manage your day-to-day tasks, chores, duties, etc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme" content="#ee0979" />
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./style/app.css">
+
+    <!--Script File-->
+    <script src="./script/app.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="newUser">
+        <form id="newUserForm" onsubmit="addNewUser(event)">
+            <p class="lead">Welcome To Will-Do, a to-do like front-end based Web App..Fill In Your Detail Below To Continue
+            </p>
+            <input placeholder="Please Enter Your First or Nickname" type="text" minlength="2" maxlength='16' name="username">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="page-wrapper">
+        <header>
+            <div class="logo">
+                <span class="logo-inner">
+                    <a href="#">
+                        <i class="mdi mdi-clipboard-text-multiple-outline" aria-hidden="true"></i>Will-Do
+                    </a>
+                </span>
+                <span class="searchbox">
+                    <input type="search" role="search" placeholder="Find Will-Do...">
+                </span>
+            </div>
+            <div class="right-div">
+                <button class="search-btn" onclick="toggleSearchbox()">
+                    <span class="mdi mdi-magnify mdi-36px"></span>
+                </button>
+                <button class="hamburger" onclick="toggleDropMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <div class="drop-menu">
+                    <div class="profile-tab">
+                        <i class="user-icon mdi mdi-account-heart"></i>
+                        <div class="username">Devvie Shurr</div>
+                        <sup><i class="edit-btn mdi mdi-pencil mdi-24px"></i></sup>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-sync mdi-spin"></i> Sync</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-check-all"></i> Done Will-Dos</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-delete-forever"></i> Wipe Data</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-delete-variant"></i> Visit Trash</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-information"></i> App Guide</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><span><i class="mdi mdi-laptop-windows"></i> Developer</span><i
+                                    class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="top-tab">
+            <div class="greet-pane">
+                <i class="mdi mdi-hand-heart" aria-hidden="true"></i>
+                <span id="greeting">Good Morning Devvie</span>
+            </div>
+            <div class="sort-pane">
+                <button class="sort-btn" onclick="toggleSortMenu()">Sort&ensp;<i class="mdi mdi-sort"
+                        aria-hidden="true"></i></button>
+                <div class="sort-menu">
+                    <div class="alpha-sort">
+                        <span>Alphabetically </span>&ensp;<span><input type="radio" name="sort-radio"></span>
+                    </div>
+                    <div class="date-sort">
+                        <span> By date added </span>&ensp; <span><input type="radio" checked="checked"
+                                name="sort-radio"></span>
+                    </div>
+                    <div class="importance-sort">
+                        <span> By Importance </span>&ensp; <span><input type="radio" name="sort-radio"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="main-content">
+            <ul class="will-do-list">
+                <li class="will-do">
+                    <div class="top-tab">
+                        <div class="timestamp">
+                            <i class="mdi mdi-clock"></i>
+                            <span class="timestamp-txt">12 Hours Ago</span>
+                        </div>
+                        <div class="tools">
+                            <span class="edit"><i class="mdi mdi-pencil"></i></span>
+                            <i class="tool-seperator mdi mdi-octagon"></i>
+                            <span class="delete"><i class="mdi mdi-delete"></i></span>
+                            <i class="tool-seperator mdi mdi-octagon"></i>
+                            <span class="check"><i class="mdi mdi-check-all"></i></span>
+                        </div>
+                    </div>
+                    <div class="will-do-txt">
+                        finish up the working parts of this project asa an delve into react.js whch will lead jdvjn djhd djhd dhd duhd ddh did dd didj dijd d to react-native
+                    </div>
+                    <div class="bottom-tab">
+                        <div class="will-do-rating">
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                        </div>
+                        <div class="tools">
+                            <span class="copy"><i class="mdi mdi-content-copy"></i></span>
+                            <span class="full-view"><i class="mdi mdi-chevron-double-down"></i></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="will-do">
+                    <div class="top-tab">
+                        <div class="timestamp">
+                            <i class="mdi mdi-clock"></i>
+                            <span class="timestamp-txt">12 Hours Ago</span>
+                        </div>
+                        <div class="tools">
+                            <span class="edit"><i class="mdi mdi-pencil"></i></span>
+                            <i class="tool-seperator mdi mdi-octagon"></i>
+                            <span class="delete"><i class="mdi mdi-delete"></i></span>
+                            <i class="tool-seperator mdi mdi-octagon"></i>
+                            <span class="check"><i class="mdi mdi-check-all"></i></span>
+                        </div>
+                    </div>
+                    <div class="will-do-txt">
+                        finish up the working parts of this project asa an delve into react.js whch will lead jdvjn djhd djhd dhd duhd ddh did dd didj dijd d to react-native
+                    </div>
+                    <div class="bottom-tab">
+                        <div class="will-do-rating">
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                            <i class="mdi mdi-star"></i>
+                        </div>
+                        <div class="tools">
+                            <span class="copy"><i class="mdi mdi-content-copy"></i></span>
+                            <span class="full-view"><i class="mdi mdi-chevron-double-down"></i></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        <footer class="floating-bottom-tab">
+            <form class="adding-form">
+                <div class="top-tab">
+                    <span class="form-label">
+                        <i class="mdi mdi-adjust"></i>
+                        Add New Will-Do
+                        <i class="mdi mdi-adjust"></i>
+                    </span>
+                </div>
+                <textarea class="text-input" placeholder="Enter Will-Do Text Here...."></textarea>
+                <div class="bottom-tab">
+                    <div class="rating">
+                        <div>*Rate Importance</div>
+                        <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i class="mdi mdi-star"></i>
+                    </div>
+                    <div class="submit">
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </form>
+            <span class="add-btn" onclick="toggleAddForm()">
+                <i class="mdi mdi-plus-circle"></i>
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>
